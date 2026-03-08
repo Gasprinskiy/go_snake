@@ -117,11 +117,7 @@ func (m *Model) isSnake(point Point) bool {
 }
 
 func (m *Model) isFood(point Point) bool {
-	if m.FoodPoint == nil {
-		return false
-	}
-
-	return point == *m.FoodPoint
+	return m.FoodPoint != nil && point == *m.FoodPoint
 }
 
 func (m *Model) isBorder(point Point) bool {
